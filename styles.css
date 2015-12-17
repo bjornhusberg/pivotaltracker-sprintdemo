@@ -1,0 +1,119 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-image:url("bg.jpg");
+  background-size: 100% 100%;
+  background-color:#000;
+  margin: 0;
+  color:#fff;
+}
+
+form {
+  text-align: center;
+}
+
+input {
+  margin: 5px 0 10px 0;
+}
+
+body.cover {
+  background-image:url("cover.jpg");
+}
+
+body.cover #content {
+  position: absolute;
+  bottom: 10%;
+  width: 90%;
+  background-image:url("overlay.png");
+  text-align: right;
+  padding: 2% 5%;
+}
+
+body.cover #title {
+  width: 100%;
+}
+
+body.cover #description {
+  width: 100%;
+  margin: 0;
+}
+
+#content {
+  padding: 10%;
+}
+
+body.finished #finished {
+  background-image: url("ok.png");
+  background-size: 40% 40%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  width: 100%;
+  height: 100%;
+}
+
+body.demo #demo {
+  background-image: url("demo.png");
+  background-size: 25% 25%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+  width: 100%;
+  height: 100%;
+}
+
+body.fasttrack #fasttrack {
+  background-image: url("fast.jpg");
+  background-position: top left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2%;
+}
+
+#title {
+  font-size: 4vw;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+}
+
+body.blocked #title {
+  background-image: url("padlock.png");
+  background-repeat: no-repeat;
+  padding-left: 7%;
+  background-size: 6%;
+  background-position: top left;
+}
+
+body.labels #labels {
+  font-weight: bold;
+  margin-top: 2%;
+  font-size: 2vw;
+  width: 50%;
+}
+
+body.labels .label {
+  background: #050;
+  padding: 1% 2%;
+  margin-right: 2%;
+  border-radius: 10px;
+}
+
+body.header #header {
+  margin-top: 4%;
+  color:#999;
+  font-size: 2vw;
+  width: 50%;
+}
+
+#description {
+  font-style: italic;
+  margin-top: 2%;
+  font-size: 2vw;
+  width: 50%;
+}
