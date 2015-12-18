@@ -82,6 +82,14 @@ body.fasttrack #fasttrack {
 	font-weight: normal;
 }
 
+#title .prefix {
+  color: #000;
+  background: #999;
+  border-radius: 10px;
+  margin-right: 1%;
+  padding: 0 1%;
+}
+
 body.blocked #title {
   background-image: url("padlock.png");
   background-repeat: no-repeat;

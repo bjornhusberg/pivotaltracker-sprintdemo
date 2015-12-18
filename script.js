@@ -46,10 +46,11 @@ function createSlideshow(iteration, projectDetails) {
 function createStorySlide(story, currentRelease) {
   var slide = {
     classes: getAllLabels(story),
-    title: story.name.replace(/\[block[^\]]*\]/ig, ""),
+    title: getTitle(story),
     description: story.description || "",
     descriptionHeader: currentRelease,
-    labels: getVisibleLabels(story)
+    labels: getVisibleLabels(story),
+    prefix: getPrefix(story)
   };
   setSlideClass(slide, "blocked", story.name.match(/\[block[^\]]*\]/i));
   setSlideClass(slide, "finished", story.current_state != "started");
@@ -77,6 +78,9 @@ function showSlide(slides, index) {
 
   $("body").removeClass().addClass(slide.classes.join(" "));
   $("#title").text(slide.title || "");
+  if (slide.prefix) {
+    $("#title").prepend($("<span>").addClass("prefix").text(slide.prefix));
+  }
   $("#header").text(slide.descriptionHeader || "");
   $("#description").text(slide.description || "");
   $("#labels").html($.map(slide.labels || [],
@@ -100,6 +104,17 @@ function formatDateInterval(start, end) {
 
 function formatDate(date) {
   return date.getDate() + "/" + (date.getMonth() + 1);
+}
+
+function getPrefix(story) {
+  var prefix = story.name.replace(/^([A-Z0-9]*) .*/, "$1");
+  return prefix == story.name ? "" : prefix;
+}
+
+function getTitle(story) {
+  return story.name
+            .replace(/^[A-Z0-9]* (.*)/, "$1")
+            .replace(/\[block[^\]]*\]/ig, "");
 }
 
 function getAllLabels(story) {
