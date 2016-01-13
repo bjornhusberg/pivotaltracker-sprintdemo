@@ -53,7 +53,7 @@ function createStorySlide(story, currentRelease) {
     prefix: getPrefix(story)
   };
   setSlideClass(slide, "blocked", story.name.match(/\[block[^\]]*\]/i));
-  setSlideClass(slide, "finished", story.current_state != "started");
+  setSlideClass(slide, "finished", story.current_state != "started" && story.current_state != "planned");
   setSlideClass(slide, "labels", slide.labels);
   setSlideClass(slide, "header", currentRelease);
   return slide;
