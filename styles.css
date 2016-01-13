@@ -124,4 +124,5 @@ body.header #header {
   margin-top: 2%;
   font-size: 2vw;
   width: 50%;
+  white-space: pre-wrap;
 }
